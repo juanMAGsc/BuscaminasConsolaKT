@@ -77,7 +77,7 @@ class Buscaminas {
 
     fun inputuser( i: Int, j: Int) {
         val resmapa = tablero[i][j]
-        if (resmapa == "*") {
+        if (resmapa == "*" && tablerovisible[i][j] != "F") {
             estadoPartida = "PERDER"
         } else {
             descubir(i,j)
