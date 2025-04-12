@@ -1,18 +1,21 @@
 class Buscaminas {
-    private var tablero = mutableListOf<MutableList<String>>()
-    private var tablerovisible = mutableListOf<MutableList<String>>()
+    var tablero = mutableListOf<MutableList<String>>()
+        get() {
+            var tablerovuelta = field.toMutableList()
+            return tablerovuelta
+        }
+    var tablerovisible = mutableListOf<MutableList<String>>()
+        get() {
+            var tablerovuelta = field.toMutableList()
+            return tablerovuelta.toMutableList()
+        }
     private var numMinas: Int = 0
     private var casrestantes: Int = 0
     private var estadoPartida = "Preparar tablero"
 
     //Funciones publicas
 
-    fun verTablero(): MutableList<MutableList<String>> {
-        return tablero
-    }
-    fun verTablerovisible(): MutableList<MutableList<String>> {
-        return tablerovisible
-    }
+
     fun verPosicion(i: Int, j: Int): String {
         return tablero[i][j]
     }
@@ -30,7 +33,7 @@ class Buscaminas {
     }
 
     fun estado(): String {
-        return estadoPartida
+        return estadoPartida.toString()
     }
 
     fun setTablerotam(largo: Int, ancho: Int) {

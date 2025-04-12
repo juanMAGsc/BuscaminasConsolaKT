@@ -22,7 +22,7 @@ fun main() {
         }
     } while (buscaminas.estado() == "Preparar minas")
 
-    var tableros = buscaminas.verTablerovisible()
+    var tableros = buscaminas.tablerovisible
 
     while (buscaminas.estado() == "Jugando"){
 
@@ -53,7 +53,7 @@ fun main() {
 
     if (buscaminas.estado() == "GANAR") { println("Ganaste") }
     if (buscaminas.estado() == "PERDER") {
-        buscaminas.verTablero().forEach { it.forEach { print("|"+it ) }
+        buscaminas.tablero.forEach { it.forEach { print("|"+it ) }
         println()
         }
         println("Perdiste") }
